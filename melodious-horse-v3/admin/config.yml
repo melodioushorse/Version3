@@ -1,0 +1,31 @@
+backend:
+  name: git-gateway
+  branch: main 
+  
+publish_mode: editorial_workflow 
+
+media_folder: "assets/images" 
+public_folder: "/assets/images" 
+
+# --- COLLECTIONS: Content Fields ---
+collections:
+  - name: "site-summary"
+    label: "1. Site Summary (Permanent Text)"
+    format: "json"
+    files:
+      - label: "Home Page Summary Box"
+        name: "summary-data"
+        file: "src/data/summary.json"
+        fields:
+          - {label: "Home Page Summary Text", name: "summary", widget: "text", hint: "Editable text for the main summary box."}
+
+  - name: "posts"
+    label: "2. Blog Posts"
+    folder: "src/posts" 
+    create: true 
+    delete: true
+    fields:
+      - {label: "Title", name: "title", widget: "string", hint: "The title of the article."}
+      - {label: "Summary Teaser", name: "summary", widget: "text", hint: "Short summary shown on the Home Page."}
+      - {label: "Publish Date", name: "date", widget: "datetime"}
+      - {label: "Article Content", name: "body", widget: "markdown", hint: "The full article content."}

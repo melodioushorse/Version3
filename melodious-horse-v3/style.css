@@ -1,0 +1,115 @@
+:root {
+    --header-bg: #212529; /* Dark Gray for Header/Footer */
+    --primary-color: #007bff; /* Blue for links/primary actions */
+    --text-color: #343a40;
+    --background-color: #e9ecef; /* Light gray overall background */
+    --main-content-bg: #ffffff; /* White background for content boxes */
+    --border-color: #dee2e6;
+}
+
+/* --- Base and Layout Fixes --- */
+html, body {
+    height: 100%; /* Important: Allows footer to anchor to bottom */
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    color: var(--text-color);
+}
+
+body {
+    display: flex;
+    flex-direction: column; /* Stacks content vertically */
+    background-color: var(--background-color);
+}
+
+/* --- Header Fix (Color/Readability) --- */
+header {
+    background-color: var(--header-bg);
+    padding: 20px 0;
+    text-align: center;
+}
+
+header h1 {
+    color: #FFFFFF; /* FIX: Title is now White for maximum readability */
+    margin: 0;
+    font-size: 2em;
+}
+
+/* --- Main Content Layout --- */
+#content-layout {
+    display: flex;
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 15px;
+    flex-grow: 1; /* Allows main content to push footer down */
+}
+
+/* Existing styles for sidebar, main-content, etc. remain here */
+#archive-sidebar {
+    width: 25%;
+    padding: 20px;
+    background-color: var(--main-content-bg);
+    border-right: 1px solid var(--border-color);
+    box-sizing: border-box;
+    text-align: left;
+}
+
+#post-archive-list {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+}
+
+#post-archive-list li a {
+    display: block;
+    padding: 8px 0;
+    text-decoration: none;
+    color: var(--primary-color);
+    border-bottom: 1px dotted var(--border-color);
+}
+
+#main-content {
+    width: 75%;
+    padding: 20px;
+    background-color: var(--main-content-bg);
+    box-sizing: border-box;
+    text-align: left;
+}
+
+/* Summary Box */
+#summary-box {
+    border: 1px solid var(--border-color);
+    padding: 15px;
+    margin-bottom: 30px;
+    text-align: left;
+}
+
+/* Post Teaser Cards */
+.post-teaser {
+    border: 1px solid var(--border-color);
+    padding: 15px;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.paywall-notification {
+    display: block;
+    margin-top: 15px;
+    color: white;
+    background-color: #dc3545;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 4px;
+}
+
+/* --- Footer Positioning Fix --- */
+footer {
+    background-color: var(--header-bg);
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: auto; 
+    width: 100%;
+}
